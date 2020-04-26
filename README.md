@@ -15,7 +15,7 @@ const iColors = new IColors({
 	space:200, //取色矩阵尺寸
 	limit:2    //取色最多颜色数
 });
-const colors = iColors.getColors(图片,16);
+const colors = iColors.getColors(图片);
 </script>
 ```
 
