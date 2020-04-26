@@ -4,16 +4,19 @@
 
 
 ## 为什么做这个很多人做过的轮子
-我的需求比较细节，比如想在不同维度合并相近颜色，大尺寸图片的取色性能优化，返回结果提供多种不同格式等等，没有找到合适的轮子、所以只能自己写一个。
+我的需求比较细节，比如想在不同维度合并相近颜色，大尺寸图片的取色性能优化，返回结果提供多种不同格式等等，没有找到合适的轮子、所以只能自己写一个了。
 
 ## 使用
-```JavaScript
-var
-iColors=new IColors({
-	space:200,
-	limit:5
+
+```HTML
+<img id="图片" src="dog.jpg">
+<script>
+const iColors = new IColors({
+	space:200, //取色矩阵尺寸
+	limit:2    //取色最多颜色数
 });
-const colors = iColors.getColors(img,16);
+const colors = iColors.getColors(图片,16);
+</script>
 ```
 
 ```JSON
@@ -32,7 +35,20 @@ const colors = iColors.getColors(img,16);
         "value": 26118,
         "hax": "ea4a15"
     },
-    // 更多颜色
+    {
+        "hsl": [
+            0,
+            83,
+            17
+        ],
+        "rgb": [
+            78,
+            7,
+            7
+        ],
+        "value": 3760,
+        "hax": "4e0707"
+    }
 ]
 ```
 
@@ -40,5 +56,7 @@ const colors = iColors.getColors(img,16);
 把自定义取色细节部分加入选项中，包括
 
 - [x] 取色矩阵尺寸选项
+- [x] 取色最多颜色选项
 - [ ] 色轮压缩等级选项
 - [ ] 去除极端颜色选项
+
