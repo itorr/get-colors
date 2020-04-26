@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>网页图片取主色工具</title>
+<meta name="viewport" content="width=device-width,user-scalable=0">
+<meta name="discription" content="网页图片取主色工具">
+<style>
+	head{
+		display: block;
+		text-align: center;
+		padding:60px 0;
+
+	}
+	title{
+		display: block;
+		font-weight:bold;
+		font-size:2.5em;
+
+	}
+	meta[name="discription"]{
+		display: block;
+		padding:.5em 0;
+		color:#999;
+	}
+	meta[name="discription"]:after{
+		content: attr(content);
+	}
+.图片们{
+	overflow: hidden;
+}
+.图片{
+	float:left;
+	height:230px;
+	position: relative;
+}
+.图片 img{
+	height:230px;
+	width: 230px;
+	object-fit:cover;
+	background:#333;
+	display:block;
+}
+.颜色们{
+	overflow: hidden;
+	position: absolute;
+	top:0;
+	padding:10px 0 0 10px;
+}
+.颜色们 div{
+	float:left;
+	width: 40px;
+	height:40px;
+	margin:6px;
+	border-radius:9em;
+}
+
+canvas{
+	image-rendering: pixelated;
+	position: absolute;
+	bottom:0;
+	right:0;
+}
+</style>
+<!-- cover.jpg -->
+<div class="图片们">
+
+
+	<div class="图片"><img src="http://img.xiami.net/images/album/img25/59325/4684371317175146.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img57/23257/313470_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img97/82497/17316604801431660480_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img40/116540/10723900611372390061_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img0/62500/3748681269954844_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img57/23257/21002317121446530349_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img0/62500/14907023081390702308_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+
+	<div class="图片"><img src="http://img.xiami.net/images/album/img57/23257/3209701236330482.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img10/89610/21002469161450150358_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img30/630730/6307301387630730_1.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img16/60416/3440681343269510.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img0/62500/7696471181369647118_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img92/77092/16814575801381457580_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img16/60416/3457311447925534_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img45/6845/1681171425457122_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img45/6845/3127781305100642_4.png?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img82/55782/13371250161437125045_4.jpeg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img13/105913/5165581338357832.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img16/60416/3368661425456624_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img43/90643/17216370251421637026_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img11/2103333811/21003869321473220548_1.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+
+	<div class="图片"><img src="http://img.xiami.net/images/album/img59/68559/3919801381543836_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img95/57495/21002405641448259070_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+
+	<div class="图片"><img src="http://img.xiami.net/images/album/img35/62835/5153601337768917_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img99/76999/5342531344577540_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img95/57495/9372145461437215497_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img99/82499/5107411335597253_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+
+	<div class="图片"><img src="http://img.xiami.net/images/album/img45/6845/2974931425457045_1.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img45/6845/2974931425457045_4.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img57/23257/3149151231737866.jpg?v=bgblur" crossorigin="http://www.xiami.com"></div>
+	<div class="图片"><img src="http://img.xiami.net/images/album/img66/1466959666/9669597931366959793_4.png?v=bgblur" crossorigin="http://www.xiami.com"></div>
+
+</div>
+<button id="取主色">取主色</button>
+
+
+<script src="get-color.js"></script>
+<script>
+
+var
+iColors=new IColors({
+	space:200
+});
+var
+取色 = (img) => {
+	const colors = iColors.getColors(img,16);
+
+	console.log(colors);
+
+	const 颜色们 = document.createElement('div');
+	颜色们.classList.add('颜色们');
+	颜色们.innerHTML=colors.map(function(color){return '<div style="background:#'+color.hax+'"></div>'}).join('');
+	img.parentNode.appendChild(颜色们);
+};
+
+取主色.onclick=function(){
+	Array.prototype.slice.call(document.images).forEach(取色)
+}
+
+document.body.onclick=function(e){
+	if(e.target.tagName === 'IMG'){
+		取色(e.target);
+	}
+}
+
+</script>
