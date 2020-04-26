@@ -109,13 +109,14 @@ canvas{
 
 var
 iColors=new IColors({
-	space:200
+	space:200,
+	limit:5
 });
 var
 取色 = (img) => {
 	const colors = iColors.getColors(img,16);
 
-	console.log(colors);
+	console.log(JSON.stringify(colors,0,4));
 
 	const 颜色们 = document.createElement('div');
 	颜色们.classList.add('颜色们');
