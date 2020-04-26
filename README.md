@@ -10,6 +10,7 @@
 
 ```HTML
 <img id="图片" src="dog.jpg">
+<script src="get-colors.js"></script>
 <script>
 const iColors = new IColors({
 	space:200, //取色矩阵尺寸
